@@ -1,7 +1,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/outputs.h>
 
 #define BASE 0
 
@@ -13,22 +12,19 @@
 };
 
 / {
-//     combos {
-//         compatible = "zmk,combos";
-
-//         combo_esc {
-//             timeout-ms = <50>;
-//             key-positions = <0 1>;
-//             bindings = <&kp ESC>;
-//         };
-
-//         combo_tvp {
-//             timeout-ms = <100>;
-//             key-positions = <11 12 13>;
-//             bindings = <&tog TVP1>;
-//         };
-//     };
-
+    //     combos {
+    //         compatible = "zmk,combos";
+    //         combo_esc {
+    //             timeout-ms = <50>;
+    //             key-positions = <0 1>;
+    //             bindings = <&kp ESC>;
+    //         };
+    //         combo_tvp {
+    //             timeout-ms = <100>;
+    //             key-positions = <11 12 13>;
+    //             bindings = <&tog TVP1>;
+    //         };
+    //     };
     // macros {
     //     gif: gif {
     //         label = "giphy";
@@ -52,13 +48,22 @@
         base_layer {
             label = "BASE";
             bindings = <
-                 &kp Q  &kp W  &kp E      &kp R          &kp T            &kp Y    &kp U      &kp I        &kp O    &kp P
-                 &kp A  &kp S  &kp D      &kp F          &kp G            &kp H    &kp J      &kp K        &kp L    &kp SEMI
-&mt LSHFT LSHFT  &kp Z  &kp X  &kp C      &kp V          &kp B            &kp N    &kp M      &kp COMMA    &kp DOT  &kp FSLH  &kp BSLH
-                               &lt 3 ESC  &kp BACKSPACE  &mt LCTRL TAB    &kp RET  &kp SPACE  &lt 3 RSHFT
+             &kp Q       &kp W        &kp E        &kp R       &kp T       &kp Y    &kp U       &kp I        &kp O        &kp P
+             &mt LGUI A  &mt LSHFT S  &mt LCTRL D  &mt LALT F  &kp G       &kp H    &mt RALT J  &mt RCTRL K  &mt RSHFT L  &mt RGUI SEMI
+&lt 1 LSHFT  &kp Z       &kp X        &kp C        &kp V       &kp B       &kp N    &kp M       &kp COMMA    &kp DOT      &kp SLASH      &none
+                                      &none        &none       &kp BSPC    &kp RET  &kp SPACE   &none
             >;
         };
 
-    };
+        tmp {
+            bindings = <
+        &bt BT_CLR_ALL  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+        &trans          &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans          &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                                &trans  &trans  &trans    &trans  &trans  &trans
+            >;
 
+            label = "tmp";
+        };
+    };
 };
