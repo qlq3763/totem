@@ -2,6 +2,9 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
+#define BASE 0
+#define NUM_SYM_NAV_FN 1
+
 // mostly copied from: https://github.com/infused-kim/zmk-config/tree/chocofi/main
 /////////////////////////////////////////////////////////////////////////////
 // key positions
@@ -156,10 +159,27 @@
         // };
     };
 };
-
 /////////////////////////////////////////////////////////////////////////////
 
-#define BASE 0
+/////////////////////////////////////////////////////////////////////////////
+// Tap-dancing toggle num_sym_nav_fn layer 
+/ {
+    behaviors {
+       /*
+        * Tap dancing num_sym_nav_fn layer
+        *
+        * Usage: &td_num_sym_nav_fn
+        * Tap: To num_sym_nav_fn layer
+        * Double Tap: To base layer
+        */
+        td_num_sym_nav_fn: td_num_sym_nav_fn {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&to BASE>, <&to NUM_SYM_NAV_FN>;
+        };
+   };
+};
 
 / {
     //     combos {
