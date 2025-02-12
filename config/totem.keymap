@@ -2,8 +2,8 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
-#include "./includes/keypos.h"
-#include "./includes/behaviours_homerow_mods.dtsi"
+#include "includes/keypos.h"
+#include "includes/behaviours_homerow_mods.dtsi"
 
 #define BASE 0
 
