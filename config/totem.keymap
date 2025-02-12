@@ -162,7 +162,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////////////
-// Tap-dancing toggle num_sym_nav_fn layer 
+// Tap-dancing toggle num_sym_nav_fn layer
 / {
     behaviors {
        /*
@@ -175,7 +175,7 @@
         td_num_sym_nav_fn: td_num_sym_nav_fn {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
             bindings = <&to BASE>, <&to NUM_SYM_NAV_FN>;
         };
    };
