@@ -3,7 +3,6 @@
 #include <dt-bindings/zmk/keys.h>
 
 // mostly copied from: https://github.com/infused-kim/zmk-config/tree/chocofi/main
-
 /////////////////////////////////////////////////////////////////////////////
 // key positions
 /*                              36 KEY MATRIX / LAYOUT MAPPING
@@ -22,52 +21,44 @@
 #define LT2  2
 #define LT3  1
 #define LT4  0
-
 #define RT0  5  // right-top row
 #define RT1  6
 #define RT2  7
 #define RT3  8
 #define RT4  9
-
 #define LM0 14  // left-middle row
 #define LM1 13
 #define LM2 12
 #define LM3 11
 #define LM4 10
-
 #define RM0 15  // right-middle row
 #define RM1 16
 #define RM2 17
 #define RM3 18
 #define RM4 19
-
 #define LB0 25  // left-bottom row
 #define LB1 24
 #define LB2 23
 #define LB3 22
 #define LB4 21
 #define LB5 20
-
 #define RB0 26  // right-bottom row
 #define RB1 27
 #define RB2 28
 #define RB3 29
 #define RB4 30
 #define RB5 31
-
 #define LH0 34  // left thumb keys
 #define LH1 33
 #define LH2 32
-
 #define RH0 35  // right thumb keys
 #define RH1 36
 #define RH2 37
-
 #define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4 LB5
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4 RB5
 #define KEYS_T LH2 LH1 LH0 RH0 RH1 RH2
-/////////////////////////////////////////////////////////////////////////////
 
+/////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
 // home row mods
 
@@ -76,9 +67,7 @@
 #define HM_PRIOR_IDLE 150
 
 / {
-
     behaviors {
-
         // Positional Homerow mods
         // Homerow mods that prevent accidental activations when rolling keys,
         // such as when typing `st` or `ne` on colemak-dh layouts or `as` on
@@ -87,19 +76,18 @@
         // Works by only allowing a mod to activate within tapping-term if
         // it's on the opposite side of the keyboard or on the same side thumb
         // keys.
-
         // Further optimization using urob's timerless homerow mods method:
         // https://github.com/urob/zmk-config#timeless-homerow-mods
+
         hm_l: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            bindings = <&kp>,  <&kp>;
+            bindings = <&kp>, <&kp>;
 
             flavor = "balanced";
             tapping-term-ms = <HM_TAPPING_TERM>;
             quick-tap-ms = <175>;                // repeat on tap-into-hold
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
-
             hold-trigger-key-positions = <KEYS_R KEYS_T>;
             hold-trigger-on-release;
         };
@@ -113,15 +101,14 @@
             tapping-term-ms = <HM_TAPPING_TERM>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
-
             hold-trigger-key-positions = <KEYS_L KEYS_T>;
             hold-trigger-on-release;
         };
 
-
         // Positional Homerow mods for shift
         // Use faster tapping term and disable some features that may
         // cause false negatives.
+
         hm_shift_l: hm_shift_l {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -131,8 +118,8 @@
             tapping-term-ms = <HM_TAPPING_TERM_FAST>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
-
             hold-trigger-key-positions = <KEYS_R KEYS_T>;
+
             // hold-trigger-on-release;
         };
 
@@ -145,8 +132,8 @@
             tapping-term-ms = <HM_TAPPING_TERM_FAST>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
-
             hold-trigger-key-positions = <KEYS_L KEYS_T>;
+
             // hold-trigger-on-release;
         };
 
@@ -163,14 +150,13 @@
         //     compatible = "zmk,behavior-hold-tap";
         //     #binding-cells = <2>;
         //     bindings = <&kp>, <&kp>;
-
         //     flavor = "balanced";
         //     tapping-term-ms = <HM_TAPPING_TERM>;
         //     quick-tap-ms = <200>;
         // };
-
     };
 };
+
 /////////////////////////////////////////////////////////////////////////////
 
 #define BASE 0
@@ -212,10 +198,10 @@
         base_layer {
             label = "BASE";
             bindings = <
-             &kp Q       &kp W        &kp E        &kp R       &kp T    &kp Y    &kp U       &kp I        &kp O        &kp P
-             &mt LGUI A  &mt LSHFT S  &mt LCTRL D  &mt LALT F  &kp G    &kp H    &mt RALT J  &mt RCTRL K  &mt RSHFT L  &mt RGUI SEMI
-&lt 1 LSHFT  &kp Z       &kp X        &kp C        &kp V       &kp B    &kp N    &kp M       &kp COMMA    &kp DOT      &kp SLASH      &none
-                                      &none        &kp BSPC    &none    &kp RET  &kp SPACE   &none
+             &kp Q  &kp W         &kp E         &kp R          &kp T               &kp Y            &kp U          &kp I         &kp O         &kp P
+             &kp A  &hm_l LGUI S  &hm_l LALT D  &hm_l LCTRL F  &kp G               &kp H            &hm_r RCTRL J  &hm_r RALT K  &hm_r RGUI L  &kp SEMI
+&lt 1 LSHFT  &kp Z  &kp X         &kp C         &kp V          &kp B               &kp N            &kp M          &kp COMMA     &kp DOT       &kp SLASH  &none
+                                  &none         &none          &hm_l LSHFT BSPC    &hm_r RSHFT RET  &kp SPACE      &none
             >;
         };
 
