@@ -159,26 +159,28 @@
         // };
     };
 };
-/////////////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
 // Tap-dancing toggle num_sym_nav_fn layer
+
 / {
     behaviors {
-       /*
+        /*
         * Tap dancing num_sym_nav_fn layer
         *
         * Usage: &td_num_sym_nav_fn
         * Tap: To num_sym_nav_fn layer
         * Double Tap: To base layer
         */
+
         td_num_sym_nav_fn: td_num_sym_nav_fn {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
             bindings = <&to BASE>, <&to NUM_SYM_NAV_FN>;
         };
-   };
+    };
 };
 
 / {
@@ -218,20 +220,20 @@
         base {
             label = "BASE";
             bindings = <
-             &kp SQT   &kp COMMA     &kp DOT       &kp P          &kp Y               &kp F            &kp G          &kp C         &kp R         &kp S
-             &kp A     &hm_l LGUI O  &hm_l LALT E  &hm_l LCTRL U  &kp I               &kp D            &hm_r RCTRL H  &hm_r RALT T  &hm_r RGUI N  &kp SEMI
-&lt 2 LSHFT  &kp SEMI  &kp Q         &kp J         &kp K          &kp X               &kp B            &kp M          &kp W         &kp V         &kp Z     &none
-                                     &none         &none          &hm_l LSHFT BSPC    &hm_r RSHFT RET  &kp SPACE      &none
+       &kp SQT   &kp COMMA     &kp DOT       &kp P               &kp Y                     &kp F                  &kp G          &kp C         &kp R         &kp L
+       &kp A     &hm_l LGUI O  &hm_l LALT E  &hm_l LCTRL U       &kp I                     &kp D                  &hm_r RCTRL H  &hm_r RALT T  &hm_r RGUI N  &kp S
+&none  &kp SEMI  &kp Q         &kp J         &kp K               &kp X                     &kp B                  &kp M          &kp W         &kp V         &kp Z  &none
+                               &kp ESC       &td_num_sym_nav_fn  &hm_shift_l LSHFT BSPC    &hm_shift_r RSHFT RET  &kp SPACE      &kp TAB
             >;
         };
 
         num_sym_nav_fn {
             label = "NUM_SYM_NAV_FN";
             bindings = <
-             &kp SQT   &kp COMMA      &kp DOT        &kp LBKT        &kp RBKT            &kp BSLH         &kp MINUS       &kp EQUAL      &kp FSLH       &kp STAR
-             &kp N7    &hm_l LGUI N8  &hm_l LALT N9  &hm_l LCTRL N0  &kp N5              &kp N6           &hm_r RCTRL N1  &hm_r RALT N2  &hm_r RGUI N3  &kp N4
-&lt 2 LSHFT  &kp SEMI  &kp LEFT       &kp RIGHT      &kp DOWN        &kp UP              &kp F11          &kp GRAVE       &kp F5         &kp F4         &kp F2    &none
-                                      &none          &none           &hm_l LSHFT BSPC    &hm_r RSHFT RET  &kp SPACE       &none
+        &trans  &trans         &trans         &kp LBKT        &kp RBKT    &kp BSLH  &kp MINUS       &kp EQUAL      &kp FSLH       &kp STAR
+        &kp N7  &hm_l LGUI N8  &hm_l LALT N9  &hm_l LCTRL N0  &kp N5      &kp N6    &hm_r RCTRL N1  &hm_r RALT N2  &hm_r RGUI N3  &kp N4
+&trans  &trans  &kp LEFT       &kp RIGHT      &kp DOWN        &kp UP      &kp F11   &kp GRAVE       &kp F5         &kp F4         &kp F2    &trans
+                               &trans         &trans          &trans      &trans    &trans          &trans
             >;
         };
 
