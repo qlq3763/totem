@@ -125,7 +125,7 @@
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
             hold-trigger-key-positions = <KEYS_R KEYS_T>;
 
-            // hold-trigger-on-release;
+            hold-trigger-on-release;
         };
 
         hm_shift_r: hm_shift_r {
@@ -139,7 +139,7 @@
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
             hold-trigger-key-positions = <KEYS_L KEYS_T>;
 
-            // hold-trigger-on-release;
+            hold-trigger-on-release;
         };
 
         // /*
@@ -237,14 +237,13 @@ v&none  &trans         &kp LEFT              &kp RIGHT      &kp DOWN        &kp 
         };
 
         mouse_bt {
+            label = "MOUSE_BT";
             bindings = <
        &msc SCRL_LEFT  &msc SCRL_RIGHT  &msc SCRL_DOWN  &msc SCRL_UP  &mkp RCLK         &none         &none         &none         &none         &none
        &mmv MOVE_LEFT  &mmv MOVE_RIGHT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mkp LCLK         &bt BT_SEL 4  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3
 &none  &none           &none            &none           &bt BT_CLR    &bt BT_CLR_ALL    &none         &none         &none         &none         &none         &none
                                         &trans          &trans        &trans            &trans        &trans        &trans
             >;
-
-            label = "MOUSE_BT";
         };
     };
 };
