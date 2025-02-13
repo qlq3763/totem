@@ -162,7 +162,7 @@
 
 /////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
-// Tap-dancing toggle num_sym_nav_fn layer
+// Tap dances
 
 / {
     behaviors {
@@ -170,16 +170,30 @@
         * Tap dancing num_sym_nav_fn layer
         *
         * Usage: &td_num_sym_nav_fn
-        * Tap: To num_sym_nav_fn layer
-        * Double Tap: To base layer
+        * Tap: To base layer
+        * Double Tap: To num_sym_nav_fn layer
         */
-
         td_num_sym_nav_fn: td_num_sym_nav_fn {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&to NUM_SYM_NAV_FN>, <&to BASE>;
+            bindings = <&to  BASE>, <&to NUM_SYM_NAV_FN>;
         };
+
+        /*
+        * Tap dancing shift and shift lock
+        *
+        * Usage: &td_shift
+        * Tap: shift, to switch input methods
+        * Double Tap: toggle shift lock
+        */
+        td_shift: td_shift {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            bindings = <&kp RSHFT>, <&kt RSHFT>;
+        };
+
     };
 };
 
