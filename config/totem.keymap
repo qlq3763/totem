@@ -183,7 +183,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&sl NUM_SYM_NAV_FN  BASE>, <&tog NUM_SYM_NAV_FN>;
+            bindings = <&sl NUM_SYM_NAV_FN>, <&tog NUM_SYM_NAV_FN>;
         };
 
         /*
