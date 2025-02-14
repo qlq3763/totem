@@ -225,7 +225,7 @@
        &kp SQT       &kp COMMA            &kp DOT       &kp P               &kp Y       &kp F    &kp G          &kp C         &kp R                &kp L
        &hm_l LGUI A &hm_l LALT O &hm_shift_l LSHFT E &hm_l LCTRL U       &kp I       &kp D    &hm_r RCTRL H  &hm_shift_r RSHFT T  &hm_r RALT N  &hm_r RGUI S
 &none  &kp SEMI      &kp Q                &kp J         &kp K               &kp X       &kp B    &kp M          &kp W         &kp V                &kp Z         &none
-                                          &kp TAB       &td_num_sym_nav_fn  &kp BSPC    &kp RET  &lt 2 SPACE    &td_shift
+                                          &kp TAB       &tog NUM_SYM_NAV_FN  &kp BSPC    &kp RET  &lt 2 SPACE    &td_shift
             >;
         };
 
