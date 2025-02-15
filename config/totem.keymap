@@ -220,7 +220,7 @@
         mm_num_sym_nav_fn: mm_num_sym_nav_fn {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&sl 3>, <&tog 1>;
+            bindings = <&sl 2>, <&tog 1>;
 
             mods = <(MOD_RCTL|MOD_RALT|MOD_RSFT|MOD_RGUI)>;
         };
@@ -252,7 +252,7 @@
         esc {
             bindings = <&kp ESC>;
             key-positions = <2 3>;
-            layers = <0 1 3 2>;
+            layers = <0 1 2 4>;
             timeout-ms = <50>;
             require-prior-idle-ms = <100>;
         };
@@ -267,37 +267,47 @@
        &kp SQT       &kp COMMA            &kp DOT       &kp P               &kp Y       &kp F    &kp G          &kp C         &kp R                &kp L
        &hm_l LGUI A  &hm_shift_l LSHFT O  &hm_l LALT E  &hm_l LCTRL U       &kp I       &kp D    &hm_r RCTRL H  &hm_r RALT T  &hm_shift_r RSHFT N  &hm_r RGUI S
 &none  &kp SEMI      &kp Q                &kp J         &kp K               &kp X       &kp B    &kp M          &kp W         &kp V                &kp Z         &none
-                                          &kp TAB       &mm_num_sym_nav_fn  &kp BSPC    &kp RET  &lt 3 SPACE    &mm_shift
+                                          &kp TAB       &mm_num_sym_nav_fn  &kp BSPC    &kp RET  &lt 2 SPACE    &mm_shift
             >;
         };
 
-        num_sym_nav_fn {
-            label = "NUM_SYM_NAV_FN";
+        num_sym {
+            label = "NUM_SYM";
             bindings = <
-       &trans         &trans                &trans         &kp LBKT        &kp RBKT    &kp BSLH  &kp MINUS       &kp EQUAL      &kp FSLH              &kp STAR
+       &trans         &trans                &trans         &kp LBKT        &kp RBKT    &kp PIPE  &kp MINUS       &kp PLUS       &kp FSLH              &kp STAR
        &hm_l LGUI N7  &hm_shift_l LSHFT N8  &hm_l LALT N9  &hm_l LCTRL N0  &kp N5      &kp N6    &hm_r RCTRL N1  &hm_r RALT N2  &hm_shift_r RSHFT N3  &hm_r RGUI N4
-&none  &trans         &kp LEFT              &kp RIGHT      &kp DOWN        &kp UP      &kp F11   &kp GRAVE       &kp F5         &kp F4                &kp F2         &none
+&none  &trans         &kp GRAVE             &kp TILDE      &kp LBRC        &kp RBRC    &kp BSLH  &kp UNDER       &kp EQUAL      &kp QMARK             &none          &none
                                             &trans         &trans          &trans      &trans    &trans          &trans
+            >;
+        };
+
+        adj {
+            label = "ADJ";
+            bindings = <
+       &msc SCRL_LEFT  &msc SCRL_RIGHT  &msc SCRL_DOWN  &msc SCRL_UP  &mkp RCLK    &bt BT_CLR_ALL  &bt BT_CLR       &none              &none         &none
+       &mmv MOVE_LEFT  &mmv MOVE_RIGHT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mkp LCLK    &bt BT_SEL 4    &bt BT_SEL 0     &bt BT_SEL 1       &bt BT_SEL 2  &bt BT_SEL 3
+&none  &kp LEFT        &kp RIGHT        &kp DOWN        &kp UP        &none        &none           &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp C_BRI_UP  &kp C_BRI_DN  &none
+                                        &trans          &trans        &trans       &trans          &trans           &trans
+            >;
+        };
+
+        num {
+            label = "NUM";
+            bindings = <
+       &none   &none   &none   &none   &none     &none   &none   &none   &none   &none
+       &kp N7  &kp N8  &kp N9  &kp N0  &kp N5    &kp N6  &kp N1  &kp N2  &kp N3  &kp N4
+&none  &none   &none   &none   &none   &none     &none   &none   &none   &none   &none   &none
+                       &none   &none   &none     &none   &none   &none
             >;
         };
 
         sym_fn {
             label = "SYM_FN";
             bindings = <
-       &none     &none     &none      &kp LBRC  &kp RBRC     &kp BSLH   &kp MINUS  &kp EQUAL  &kp FSLH  &none
-       &kp AMPS  &kp STAR  &kp LPAR   &kp RPAR  &kp PRCNT    &kp CARET  &kp EXCL   &kp AT     &kp HASH  &kp DLLR
-&none  &none     &kp LEFT  &kp RIGHT  &kp LBKT  &kp RBKT     &kp F11    &kp GRAVE  &kp F5     &kp F4    &kp F2    &none
-                           &trans     &trans    &trans       &trans     &trans     &trans
-            >;
-        };
-
-        mouse_bt {
-            label = "MOUSE_BT";
-            bindings = <
-       &msc SCRL_LEFT  &msc SCRL_RIGHT  &msc SCRL_DOWN  &msc SCRL_UP  &mkp RCLK         &none         &none         &none         &none         &none
-       &mmv MOVE_LEFT  &mmv MOVE_RIGHT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mkp LCLK         &bt BT_SEL 4  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3
-&none  &none           &none            &none           &bt BT_CLR    &bt BT_CLR_ALL    &none         &none         &none         &none         &none         &none
-                                        &trans          &trans        &trans            &trans        &trans        &trans
+       &kp DQT    &kp LT     &kp GT     &kp LBKT  &kp RBKT     &kp PIPE   &kp MINUS  &kp PLUS   &kp FSLH   &kp STAR
+       &kp AMPS   &kp STAR   &kp LPAR   &kp RPAR  &kp PRCNT    &kp CARET  &kp EXCL   &kp AT     &kp HASH   &kp DLLR
+&none  &kp COLON  &kp GRAVE  &kp TILDE  &kp LBRC  &kp RBRC     &kp BSLH   &kp UNDER  &kp EQUAL  &kp QMARK  &none     &none
+                             &none      &none     &kp F11      &kp F5     &kp F4     &kp F2
             >;
         };
     };
