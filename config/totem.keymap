@@ -8,7 +8,8 @@
 
 #define BASE 0
 #define NUM_SYM_NAV_FN 1
-#define MOUSE_BT 2
+#define SYM_FN 2
+#define MOUSE_BT 3
 
 // mostly copied from: https://github.com/infused-kim/zmk-config/tree/chocofi/main
 /////////////////////////////////////////////////////////////////////////////
@@ -65,10 +66,10 @@
 #define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4 LB5
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4 RB5
 #define KEYS_T LH2 LH1 LH0 RH0 RH1 RH2
+/////////////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////
-// home row mods
+// homerow mods
 
 #define HM_TAPPING_TERM 300
 #define HM_TAPPING_TERM_FAST 200
@@ -164,8 +165,8 @@
         // };
     };
 };
-
 /////////////////////////////////////////////////////////////////////////////
+
 /////////////////////////////////////////////////////////////////////////////
 // Tap dances
 
@@ -179,12 +180,12 @@
         * Double Tap: To num_sym_nav_fn layer
         */
 
-        td_num_sym_nav_fn: td_num_sym_nav_fn {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <250>;
-            bindings = <&sl NUM_SYM_NAV_FN>, <&tog NUM_SYM_NAV_FN>;
-        };
+        // TDv_num_sym_nav_fn: td_num_sym_nav_fn {
+        //     compatible = "zmk,behavior-tap-dance";
+        //     #binding-cells = <0>;
+        //     tapping-term-ms = <300>;
+        //     bindings = <&sl NUM_SYM_NAV_FN>, <&tog NUM_SYM_NAV_FN>;
+        // };
 
         /*
         * Tap dancing shift and shift lock
@@ -197,11 +198,50 @@
         td_shift: td_shift {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <250>;
+            tapping-term-ms = <300>;
             bindings = <&kp RSHFT>, <&kt RSHFT>;
         };
     };
 };
+/////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////////
+// mod morph
+
+/ {
+    behaviors {
+        /*
+        * Mod morphing num_sym_nav_fn layer
+        *
+        * Usage: &mm_num_sym_nav_fn
+        * Tap: One-shot sym_fn layer
+        * Mod-Tap: Toggle num_sym_nav_fn layer
+        */
+
+        mm_num_sym_nav_fn: mm_num_sym_nav_fn {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&sl SYM_FN>, <&tog NUM_SYM_NAV_FN>;
+            mods = <(MOD_RCTL|MOD_RALT|MOD_RSFT|MOD_RGUI)>;
+        };
+
+        /*
+        * Mod morphing shift and shift lock
+        *
+        * Usage: &mm_shift
+        * Tap: shift, to switch input methods
+        * Mod-Tap: toggle shift lock
+        */
+
+        mm_shift: mm_shift {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp RSHFT>, <&kt RSHFT>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_LSFT|MOD_LGUI)>;
+        };
+    };
+};
+/////////////////////////////////////////////////////////////////////////////
 
 / {
     combos {
@@ -210,7 +250,7 @@
         esc {
             bindings = <&kp ESC>;
             key-positions = <2 3>;
-            layers = <0 1 2>;
+            layers = <0 1 2 3>;
             timeout-ms = <50>;
             require-prior-idle-ms = <100>;
         };
@@ -225,7 +265,7 @@
        &kp SQT       &kp COMMA            &kp DOT       &kp P               &kp Y       &kp F    &kp G          &kp C         &kp R                &kp L
        &hm_l LGUI A  &hm_shift_l LSHFT O  &hm_l LALT E  &hm_l LCTRL U       &kp I       &kp D    &hm_r RCTRL H  &hm_r RALT T  &hm_shift_r RSHFT N  &hm_r RGUI S
 &none  &kp SEMI      &kp Q                &kp J         &kp K               &kp X       &kp B    &kp M          &kp W         &kp V                &kp Z         &none
-                                          &kp TAB       &td_num_sym_nav_fn  &kp BSPC    &kp RET  &lt 2 SPACE    &td_shift
+                                          &kp TAB       &mm_num_sym_nav_fn  &kp BSPC    &kp RET  &lt MOUSE_BT SPACE    &mm_shift
             >;
         };
 
