@@ -269,9 +269,9 @@
         mm_shift: mm_shift {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp RSHFT>, <&kt RSHFT>;
+            bindings = <&kp LSHFT>, <&kt LSHFT>; // lshft to avoid conflict with mm_sym_fn
 
-            mods = <(MOD_LCTL|MOD_LALT|MOD_LSFT|MOD_LGUI)>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
         };
     };
 };
