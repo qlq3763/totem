@@ -237,46 +237,6 @@
 };
 
 /////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////
-// mod morph
-
-/ {
-    behaviors {
-        /*
-        * Mod morphing sym_fn and num_sym layer
-        *
-        * Usage: &mm_sym_fn
-        * Tap: Sticky sym_fn layer
-        * Mod-Tap: To num_sym layer
-        */
-
-        mm_sym_fn: mm_sym_fn {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&sl SYM_FN>, <&to NUM_SYM>;
-
-            mods = <(MOD_RSFT|MOD_RGUI)>;
-        };
-
-        /*
-        * Mod morphing shift and shift lock
-        *
-        * Usage: &mm_shift
-        * Tap: shift, to switch input methods
-        * Mod-Tap: toggle shift lock
-        */
-
-        mm_shift: mm_shift {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp LSHFT>, <&kt LSHFT>; // lshft to avoid conflict with mm_sym_fn
-
-            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-        };
-    };
-};
-
-/////////////////////////////////////////////////////////////////////////////
 
 / {
     combos {
@@ -300,7 +260,7 @@
        &kp SQT        &kp COMMA            &kp DOT       &kp P          &kp Y           &kp F         &kp G          &kp C         &kp R                &kp L
        &hm_num_l 3 A  &hm_shift_l LSHFT O  &hm_l LALT E  &hm_l LCTRL U  &hm_l LGUI I    &hm_r RGUI D  &hm_r RCTRL H  &hm_r RALT T  &hm_shift_r RSHFT N  &hm_num_r 3 S
 &none  &kp SEMI       &kp Q                &kp J         &kp K          &kp X           &kp B         &kp M          &kp W         &kp V                &kp Z          &none
-                                           &kp TAB       &mm_sym_fn     &kp BSPC        &kp RET       &lt 2 SPACE    &mm_shift
+                                           &kp TAB       &td_sym_fn     &kp BSPC        &kp RET       &lt 2 SPACE    &td_shift
             >;
         };
 
