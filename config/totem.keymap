@@ -300,7 +300,7 @@
        &kp DQT    &kp LT     &kp GT     &kp LBRC  &kp RBRC     &kp PIPE   &kp MINUS  &kp PLUS   &kp FSLH   &kp STAR
        &kp AMPS   &kp STAR   &kp LPAR   &kp RPAR  &kp PRCNT    &kp CARET  &kp EXCL   &kp AT     &kp HASH   &kp DLLR
 &none  &kp COLON  &kp GRAVE  &kp TILDE  &kp LBKT  &kp RBKT     &kp BSLH   &kp UNDER  &kp EQUAL  &kp QMARK  &none     &none
-                             &trans     &kp F11   &trans       &kp F5     &kp F4     &kp F2
+                             &kp F11    &trans    &trans       &kp F5     &kp F4     &kp F2
             >;
         };
     };
