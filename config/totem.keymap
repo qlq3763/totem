@@ -1,4 +1,4 @@
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1000  // default: 600
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 700  // default: 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 70    // default: 10
 
 #include <behaviors.dtsi>
@@ -18,7 +18,7 @@
 // mostly copied from: https://github.com/infused-kim/zmk-config/tree/chocofi/main
 /////////////////////////////////////////////////////////////////////////////
 // key positions
-/*                              36 KEY MATRIX / LAYOUT MAPPING
+/*                               KEY MATRIX / LAYOUT MAPPING
 
    ╭────────────────────┬────────────────────╮        ╭─────────────────────┬─────────────────────╮
    │  0   1   2   3   4 │  5   6   7   8   9 │        │ LT4 LT3 LT2 LT1 LT0 │ RT0 RT1 RT2 RT3 RT4 │
@@ -160,7 +160,7 @@
             quick-tap-ms = <175>;
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
             hold-trigger-key-positions = <KEYS_R KEYS_T>;
-            hold-trigger-on-release;
+            // hold-trigger-on-release;
         };
 
         hm_shift_r: hm_shift_r {
@@ -173,7 +173,7 @@
             quick-tap-ms = <175>;
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
             hold-trigger-key-positions = <KEYS_L KEYS_T>;
-            hold-trigger-on-release;
+            // hold-trigger-on-release;
         };
 
         // /*
