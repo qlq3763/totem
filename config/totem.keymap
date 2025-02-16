@@ -70,8 +70,6 @@
 #define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4 LB5
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4 RB5
 #define KEYS_T LH2 LH1 LH0 RH0 RH1 RH2
-#define NUM_L LM0 LM1 LM2 LM3 LM4
-#define NUM_R RM0 RM1 RM2 RM3 RM4
 
 /////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
@@ -120,9 +118,9 @@
             hold-trigger-on-release;
         };
 
-        // Positional Homerow mods for number
+        // Positional Homerow mods for number and symbol
 
-        hm_num_l: homerow_num_left {
+        hm_numsym_l: homerow_numsym_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             bindings = <&mo>, <&kp>;
@@ -131,11 +129,11 @@
             tapping-term-ms = <HM_TAPPING_TERM>;
             quick-tap-ms = <175>;                // repeat on tap-into-hold
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
-            hold-trigger-key-positions = <NUM_R>;
+            hold-trigger-key-positions = <KEYS_R>;
             hold-trigger-on-release;
         };
 
-        hm_num_r: homerow_num_right {
+        hm_numsym_r: homerow_numsym_right {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             bindings = <&mo>, <&kp>;
@@ -144,7 +142,7 @@
             tapping-term-ms = <HM_TAPPING_TERM>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
-            hold-trigger-key-positions = <NUM_L>;
+            hold-trigger-key-positions = <KEYS_L>;
             hold-trigger-on-release;
         };
 
@@ -258,7 +256,7 @@
             label = "BASE";
             bindings = <
        &kp SQT        &kp COMMA            &kp DOT       &kp P          &kp Y           &kp F         &kp G          &kp C         &kp R                &kp L
-       &hm_num_l 3 A  &hm_shift_l LSHFT O  &hm_l LALT E  &hm_l LCTRL U  &hm_l LGUI I    &hm_r RGUI D  &hm_r RCTRL H  &hm_r RALT T  &hm_shift_r RSHFT N  &hm_num_r 3 S
+       &hm_numsym_l 3 A  &hm_shift_l LSHFT O  &hm_l LALT E  &hm_l LCTRL U  &hm_l LGUI I    &hm_r RGUI D  &hm_r RCTRL H  &hm_r RALT T  &hm_shift_r RSHFT N  &hm_numsym_r 3 S
 &none  &kp SEMI       &kp Q                &kp J         &kp K          &kp X           &kp B         &kp M          &kp W         &kp V                &kp Z          &none
                                            &kp TAB       &td_sym_fn     &kp BSPC        &kp RET       &lt 2 SPACE    &td_shift
             >;
