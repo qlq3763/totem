@@ -269,7 +269,7 @@
             bindings = <
        &trans         &hm_numsym_l 3 COMMA  &trans         &hm_numsym_l 4 LBRC  &kp RBRC    &kp PIPE  &hm_numsym_r 4 MINUS  &kp PLUS       &hm_numsym_r 3 FSLH   &kp STAR
        &hm_l LGUI N7  &hm_shift_l LSHFT N8  &hm_l LALT N9  &hm_l LCTRL N0       &kp N5      &kp N6    &hm_r RCTRL N1        &hm_r RALT N2  &hm_shift_r RSHFT N3  &hm_r RGUI N4
-&none  &trans         &kp GRAVE             &kp TILDE      &kp LBKT             &kp RBKT    &kp BSLH  &kp UNDER             &kp EQUAL      &kp QMARK             &to 0          &none
+&none  &trans         &kp TILDE             &kp GRAVE      &kp LBKT             &kp RBKT    &kp BSLH  &kp UNDER             &kp EQUAL      &kp QMARK             &to 0          &none
                                             &trans         &trans               &trans      &trans    &trans                &trans
             >;
         };
@@ -287,10 +287,10 @@
         num {
             label = "NUM";
             bindings = <
-       &kp N7  &kp N8  &kp N9   &kp N0  &kp N5    &kp N5  &kp N0  &kp N9   &kp N8  &kp N7
-       &kp N4  &kp N3  &kp N2   &kp N1  &kp N6    &kp N6  &kp N1  &kp N2   &kp N3  &kp N4
-&none  &none   &none   &kp DOT  &none   &none     &none   &none   &kp DOT  &none   &none   &none
-                       &trans   &trans  &trans    &trans  &trans  &trans
+       &kp N7  &kp N8   &kp N9  &kp N0  &kp N5    &kp N5  &kp N0  &kp N9  &kp N8   &kp N7
+       &kp N4  &kp N3   &kp N2  &kp N1  &kp N6    &kp N6  &kp N1  &kp N2  &kp N3   &kp N4
+&none  &none   &kp DOT  &none   &none   &none     &none   &none   &none   &kp DOT  &none   &none
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
 
@@ -299,7 +299,7 @@
             bindings = <
        &kp DQT    &kp LT     &kp GT     &kp LBRC  &kp RBRC     &kp PIPE   &kp MINUS  &kp PLUS   &kp FSLH   &kp STAR
        &kp AMPS   &kp STAR   &kp LPAR   &kp RPAR  &kp PRCNT    &kp CARET  &kp EXCL   &kp AT     &kp HASH   &kp DLLR
-&none  &kp COLON  &kp GRAVE  &kp TILDE  &kp LBKT  &kp RBKT     &kp BSLH   &kp UNDER  &kp EQUAL  &kp QMARK  &none     &none
+&none  &kp COLON  &kp TILDE  &kp GRAVE  &kp LBKT  &kp RBKT     &kp BSLH   &kp UNDER  &kp EQUAL  &kp QMARK  &none     &none
                              &kp F11    &trans    &trans       &kp F5     &kp F4     &kp F2
             >;
         };
