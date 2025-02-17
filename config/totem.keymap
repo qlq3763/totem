@@ -258,10 +258,10 @@
         base {
             label = "BASE";
             bindings = <
-       &kp SQT       &hm_numsym_l 2 COMMA  &kp DOT       &hm_numsym_l 3 P  &kp Y       &kp F    &hm_numsym_r 3 G  &kp C         &hm_numsym_r 2 R     &kp L
-       &hm_l LGUI A  &hm_shift_l LSHFT O   &hm_l LALT E  &hm_l LCTRL U     &kp I       &kp D    &hm_r RCTRL H     &hm_r RALT T  &hm_shift_r RSHFT N  &hm_r RGUI S
-&none  &kp SEMI      &kp Q                 &kp J         &kp K             &kp X       &kp B    &kp M             &kp W         &kp V                &kp Z         &none
-                                           &kp TAB       &td_symfn_numsym        &kp BSPC    &kp RET  &lt 4 SPACE       &td_num_shift
+       &kp SQT       &hm_numsym_l 2 COMMA  &kp DOT       &hm_numsym_l 3 P  &kp Y       &kp F    &hm_numsym_r 3 G  &kp C          &hm_numsym_r 2 R     &kp L
+       &hm_l LGUI A  &hm_shift_l LSHFT O   &hm_l LALT E  &hm_l LCTRL U     &kp I       &kp D    &hm_r RCTRL H     &hm_r RALT T   &hm_shift_r RSHFT N  &hm_r RGUI S
+&none  &kp SEMI      &kp Q                 &kp J         &kp K             &kp X       &kp B    &kp M             &kp W          &kp V                &kp Z         &none
+                                           &kp TAB       &td_symfn_numsym  &kp BSPC    &kp RET  &lt 4 SPACE       &td_num_shift
             >;
         };
 
@@ -269,7 +269,7 @@
             label = "NUM_SYM";
             bindings = <
        &trans         &hm_numsym_l 2 COMMA  &trans         &hm_numsym_l 3 LBRC  &kp RBRC    &kp PIPE  &hm_numsym_r 3 MINUS  &kp PLUS       &hm_numsym_r 2 FSLH   &kp STAR
-       &hm_l LGUI N7  &hm_shift_l LSHFT N8  &hm_l LALT N9  &hm_l LCTRL N0       &kp N5      &kp N6    &hm_r RCTRL N1        &hm_r RALT N2  &hm_shift_r RSHFT N3  &hm_r RGUI N4
+       &hm_l LGUI N7  &hm_shift_l LSHFT N8  &hm_l LALT N9  &hm_l LCTRL N0       &kp N6      &kp N5    &hm_r RCTRL N1        &hm_r RALT N2  &hm_shift_r RSHFT N3  &hm_r RGUI N4
 &none  &trans         &kp TILDE             &kp GRAVE      &kp LBKT             &kp RBKT    &kp BSLH  &kp UNDER             &kp EQUAL      &kp QMARK             &to 0          &none
                                             &trans         &trans               &trans      &trans    &trans                &trans
             >;
@@ -278,8 +278,8 @@
         num {
             label = "NUM";
             bindings = <
-       &kp N7  &kp N8  &kp N9  &kp N0   &kp N5    &kp N5  &kp N0  &kp N9  &kp N8  &kp N7
-       &kp N4  &kp N3  &kp N2  &kp N1   &kp N6    &kp N6  &kp N1  &kp N2  &kp N3  &kp N4
+       &kp N7  &kp N8  &kp N9  &kp N0   &kp N6    &kp N6  &kp N0  &kp N9  &kp N8  &kp N7
+       &kp N4  &kp N3  &kp N2  &kp N1   &kp N5    &kp N5  &kp N1  &kp N2  &kp N3  &kp N4
 &none  &none   &none   &none   &none    &none     &none   &none   &none   &none   &none   &none
                        &trans  &kp DOT  &trans    &trans  &trans  &trans
             >;
@@ -289,7 +289,7 @@
             label = "SYM_FN";
             bindings = <
        &kp DQT    &kp LT     &kp GT     &kp LBRC  &kp RBRC     &kp PIPE   &kp MINUS  &kp PLUS   &kp FSLH   &kp STAR
-       &kp AMPS   &kp STAR   &kp LPAR   &kp RPAR  &kp PRCNT    &kp CARET  &kp EXCL   &kp AT     &kp HASH   &kp DLLR
+       &kp AMPS   &kp STAR   &kp LPAR   &kp RPAR  &kp CARET    &kp PRCNT  &kp EXCL   &kp AT     &kp HASH   &kp DLLR
 &none  &kp COLON  &kp TILDE  &kp GRAVE  &kp LBKT  &kp RBKT     &kp BSLH   &kp UNDER  &kp EQUAL  &kp QMARK  &none     &none
                              &kp F11    &trans    &trans       &kp F5     &kp F4     &kp F2
             >;
