@@ -11,9 +11,9 @@
 
 #define BASE 0
 #define NUM_SYM 1
-#define ADJ 2
-#define NUM 3
-#define SYM_FN 4
+#define NUM 2
+#define SYM_FN 3
+#define ADJ 4
 
 // mostly copied from: https://github.com/infused-kim/zmk-config/tree/chocofi/main
 /////////////////////////////////////////////////////////////////////////////
