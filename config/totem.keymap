@@ -212,7 +212,7 @@
         * Double Tap: To num_sym layer
         */
 
-        td_sym_fn: td_sym_fn {
+        td_symfn_numsym: td_symfn_numsym {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
@@ -220,18 +220,18 @@
         };
 
         /*
-        * Tap dancing shift and shift lock
+        * Tap dancing num and shift lock
         *
-        * Usage: &td_shift
-        * Tap: shift, to switch input methods
+        * Usage: &td_num_shift
+        * Tap: Sticky num layer
         * Double Tap: toggle shift lock
         */
 
-        td_shift: td_shift {
+        td_num_shift: td_num_shift {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp RSHFT>, <&kt RSHFT>;
+            bindings = <&sl NUM>, <&kt RSHFT>;
         };
     };
 };
@@ -260,7 +260,7 @@
        &kp SQT       &hm_numsym_l 2 COMMA  &kp DOT       &hm_numsym_l 3 P  &kp Y       &kp F    &hm_numsym_r 3 G  &kp C         &hm_numsym_r 2 R     &kp L
        &hm_l LGUI A  &hm_shift_l LSHFT O   &hm_l LALT E  &hm_l LCTRL U     &kp I       &kp D    &hm_r RCTRL H     &hm_r RALT T  &hm_shift_r RSHFT N  &hm_r RGUI S
 &none  &kp SEMI      &kp Q                 &kp J         &kp K             &kp X       &kp B    &kp M             &kp W         &kp V                &kp Z         &none
-                                           &kp TAB       &td_sym_fn        &kp BSPC    &kp RET  &lt 4 SPACE       &td_shift
+                                           &kp TAB       &td_symfn_numsym        &kp BSPC    &kp RET  &lt 4 SPACE       &td_num_shift
             >;
         };
 
