@@ -261,7 +261,7 @@
        &kp SQT       &hm_numsym_l 2 COMMA  &kp DOT       &hm_numsym_l 3 P  &kp Y       &kp F    &hm_numsym_r 3 G  &kp C          &hm_numsym_r 2 R     &kp L
        &hm_l LGUI A  &hm_shift_l LSHFT O   &hm_l LALT E  &hm_l LCTRL U     &kp I       &kp D    &hm_r RCTRL H     &hm_r RALT T   &hm_shift_r RSHFT N  &hm_r RGUI S
 &none  &kp SEMI      &kp Q                 &kp J         &kp K             &kp X       &kp B    &kp M             &kp W          &kp V                &kp Z         &none
-                                           &kp TAB       &td_symfn_numsym  &kp BSPC    &kp RET  &lt 4 SPACE       &td_num_shift
+                                           &kp TAB       &td_symfn_numsym  &kp BSPC    &kp RET  &lt 5 SPACE       &td_num_shift
             >;
         };
 
@@ -302,6 +302,16 @@
        &mmv MOVE_LEFT  &mmv MOVE_RIGHT  &mmv MOVE_DOWN  &mmv MOVE_UP  &none        &bt BT_SEL 4    &bt BT_SEL 0     &bt BT_SEL 1       &bt BT_SEL 2  &bt BT_SEL 3
 &none  &kp LEFT        &kp RIGHT        &kp DOWN        &kp UP        &none        &none           &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp C_BRI_UP  &kp C_BRI_DN  &none
                                         &trans          &mkp LCLK     &mkp RCLK    &trans          &trans           &trans
+            >;
+        };
+
+        numsym {
+            label = "NUMSYM";
+            bindings = <
+       &kp LBKT   &kp N1  &kp N2   &kp N3     &kp RBKT     &none  &none      &none     &none      &none
+       &kp N7     &kp N8  &kp N9   &kp N0     &kp FSLH     &none  &sk RCTRL  &sk RALT  &sk RSHFT  &sk RGUI
+&none  &kp GRAVE  &kp N4  &kp N5   &kp N6     &kp BSLH     &none  &none      &none     &none      &none     &none
+                          &kp DOT  &kp MINUS  &kp EQUAL    &none  &none      &none
             >;
         };
     };
