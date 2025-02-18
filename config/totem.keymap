@@ -298,9 +298,9 @@
         adj {
             label = "ADJ";
             bindings = <
-       &msc SCRL_LEFT  &msc SCRL_RIGHT  &msc SCRL_DOWN  &msc SCRL_UP  &none        &bt BT_CLR_ALL  &bt BT_CLR       &none              &none         &none
-       &mmv MOVE_LEFT  &mmv MOVE_RIGHT  &mmv MOVE_DOWN  &mmv MOVE_UP  &none        &bt BT_SEL 4    &bt BT_SEL 0     &bt BT_SEL 1       &bt BT_SEL 2  &bt BT_SEL 3
-&none  &kp LEFT        &kp RIGHT        &kp DOWN        &kp UP        &none        &none           &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp C_BRI_UP  &kp C_BRI_DN  &none
+       &mmv MOVE_LEFT  &mmv MOVE_RIGHT  &mmv MOVE_DOWN  &mmv MOVE_UP  &none        &bt BT_CLR_ALL  &bt BT_CLR       &none              &none         &none
+       &kp LEFT        &kp RIGHT        &kp DOWN        &kp UP        &none        &bt BT_SEL 4    &bt BT_SEL 0     &bt BT_SEL 1       &bt BT_SEL 2  &bt BT_SEL 3
+&none  &msc SCRL_LEFT  &msc SCRL_RIGHT  &msc SCRL_DOWN  &msc SCRL_UP  &none        &none           &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp C_BRI_UP  &kp C_BRI_DN  &none
                                         &trans          &mkp LCLK     &mkp RCLK    &trans          &trans           &trans
             >;
         };
@@ -308,10 +308,10 @@
         numsym {
             label = "NUMSYM";
             bindings = <
-       &kp LBKT   &kp N1  &kp N2   &kp N3     &kp RBKT     &none  &none      &none     &none      &none
-       &kp N7     &kp N8  &kp N9   &kp N0     &kp FSLH     &none  &sk RCTRL  &sk RALT  &sk RSHFT  &sk RGUI
-&none  &kp GRAVE  &kp N4  &kp N5   &kp N6     &kp BSLH     &none  &none      &none     &none      &none     &none
-                          &kp DOT  &kp MINUS  &kp EQUAL    &none  &none      &none
+       &kp N7     &kp N8    &kp N9    &kp N0     &kp N6       &none  &none      &none     &none      &none
+       &kp N4     &kp N3    &kp N2    &kp N1     &kp N5       &none  &sk RCTRL  &sk RALT  &sk RSHFT  &sk RGUI
+&none  &kp GRAVE  &kp FSLH  &kp BSLH  &kp LBKT   &kp RBKT     &none  &none      &none     &none      &none     &none
+                            &kp DOT   &kp MINUS  &kp EQUAL    &none  &none      &none
             >;
         };
     };
