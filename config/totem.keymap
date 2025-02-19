@@ -80,8 +80,6 @@
 #define HM_PRIOR_IDLE 0
 #define HM_QUICK_TAP 0
 
-&sl { release-after-ms = <2000>; };
-
 / {
     behaviors {
         // Positional Homerow mods
@@ -217,7 +215,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&sl SYM_FN>, <&to NUM_SYM>;
+            bindings = <&sl 0>, <&to 0>;
         };
 
         /*
@@ -232,7 +230,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&sl NUM>, <&kt RSHFT>;
+            bindings = <&sl 0>, <&kt RSHFT>;
         };
     };
 };
@@ -240,17 +238,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        esc {
-            bindings = <&kp ESC>;
-            key-positions = <2 3>;
-            layers = <0 1 4>;
-            timeout-ms = <50>;
-            require-prior-idle-ms = <100>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     keymap {
         compatible = "zmk,keymap";
@@ -258,40 +246,20 @@
         base {
             label = "BASE";
             bindings = <
-       &kp SQT       &hm_numsym_l 2 COMMA  &kp DOT       &hm_numsym_l 3 P  &kp Y      &kp F      &hm_numsym_r 3 G      &kp C          &hm_numsym_r 2 R     &kp L
-       &hm_l LGUI A  &hm_shift_l LSHFT O   &hm_l LALT E  &hm_l LCTRL U     &kp I      &kp D      &hm_r RCTRL H         &hm_r RALT T   &hm_shift_r RSHFT N  &hm_r RGUI S
-&none  &kp SEMI      &kp Q                 &kp J         &kp K             &kp X      &kp B      &kp M                 &kp W          &kp V                &kp Z         &none
-                                           &kp TAB       &kp BSPC          &kp RET    &kp RSHFT  &hm_numsym_r 5 SPACE  &td_num_shift
+       &kp SQT       &kp COMMA            &kp DOT       &kp P          &kp Y      &kp F                  &kp G          &kp C          &kp R                &kp L
+       &hm_l LGUI A  &hm_shift_l LSHFT O  &hm_l LALT E  &hm_l LCTRL U  &kp I      &kp D                  &hm_r RCTRL H  &hm_r RALT T   &hm_shift_r RSHFT N  &hm_r RGUI S
+&none  &kp SEMI      &kp Q                &kp J         &kp K          &kp X      &kp B                  &kp M          &kp W          &kp V                &kp Z         &none
+                                          &kp TAB       &kp SPACE      &kp RET    &hm_shift_r RSHFT TAB  &lt 1 BSPC     &td_num_shift
             >;
         };
 
-        num_sym {
-            label = "NUM_SYM";
+        numsym {
+            label = "NUMSYM";
             bindings = <
-       &trans         &hm_numsym_l 2 COMMA  &trans         &hm_numsym_l 3 LBRC  &kp RBRC    &kp PIPE  &hm_numsym_r 3 MINUS  &kp PLUS       &hm_numsym_r 2 FSLH   &kp STAR
-       &hm_l LGUI N7  &hm_shift_l LSHFT N8  &hm_l LALT N9  &hm_l LCTRL N0       &kp N6      &kp N5    &hm_r RCTRL N1        &hm_r RALT N2  &hm_shift_r RSHFT N3  &hm_r RGUI N4
-&none  &trans         &kp TILDE             &kp GRAVE      &kp LBKT             &kp RBKT    &kp BSLH  &kp UNDER             &kp EQUAL      &kp QMARK             &to 0          &none
-                                            &trans         &trans               &trans      &trans    &trans                &trans
-            >;
-        };
-
-        num {
-            label = "NUM";
-            bindings = <
-       &kp N7  &kp N8  &kp N9  &kp N0   &kp N6    &kp N6  &kp N0  &kp N9  &kp N8  &kp N7
-       &kp N4  &kp N3  &kp N2  &kp N1   &kp N5    &kp N5  &kp N1  &kp N2  &kp N3  &kp N4
-&none  &none   &none   &none   &none    &none     &none   &none   &none   &none   &none   &none
-                       &trans  &kp DOT  &trans    &trans  &trans  &trans
-            >;
-        };
-
-        sym_fn {
-            label = "SYM_FN";
-            bindings = <
-       &kp DQT    &kp LT     &kp GT     &kp LBRC  &kp RBRC     &kp PIPE   &kp MINUS  &kp PLUS   &kp FSLH   &kp STAR
-       &kp AMPS   &kp STAR   &kp LPAR   &kp RPAR  &kp CARET    &kp PRCNT  &kp EXCL   &kp AT     &kp HASH   &kp DLLR
-&none  &kp COLON  &kp TILDE  &kp GRAVE  &kp LBKT  &kp RBKT     &kp BSLH   &kp UNDER  &kp EQUAL  &kp QMARK  &none     &none
-                             &kp F11    &trans    &trans       &kp F5     &kp F4     &kp F2
+       &kp N7     &kp N8    &kp N9    &kp N0     &kp N6       &none   &none      &none     &none      &none
+       &kp N4     &kp N3    &kp N2    &kp N1     &kp N5       &none   &sk RCTRL  &sk RALT  &sk RSHFT  &sk RGUI
+&none  &kp GRAVE  &kp FSLH  &kp BSLH  &kp LBKT   &kp RBKT     &none   &none      &none     &none      &none     &none
+                            &kp DOT   &kp MINUS  &kp EQUAL    &trans  &trans     &trans
             >;
         };
 
@@ -302,16 +270,6 @@
        &kp LEFT        &kp RIGHT        &kp DOWN        &kp UP        &none        &bt BT_SEL 4    &bt BT_SEL 0     &bt BT_SEL 1       &bt BT_SEL 2  &bt BT_SEL 3
 &none  &msc SCRL_LEFT  &msc SCRL_RIGHT  &msc SCRL_DOWN  &msc SCRL_UP  &none        &none           &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp C_BRI_UP  &kp C_BRI_DN  &none
                                         &trans          &mkp LCLK     &mkp RCLK    &trans          &trans           &trans
-            >;
-        };
-
-        numsym {
-            label = "NUMSYM";
-            bindings = <
-       &kp N7     &kp N8    &kp N9    &kp N0     &kp N6       &none  &none      &none     &none      &none
-       &kp N4     &kp N3    &kp N2    &kp N1     &kp N5       &none  &sk RCTRL  &sk RALT  &sk RSHFT  &sk RGUI
-&none  &kp GRAVE  &kp FSLH  &kp BSLH  &kp LBKT   &kp RBKT     &none  &none      &none     &none      &none     &none
-                            &kp DOT   &kp MINUS  &kp EQUAL    &none  &none      &none
             >;
         };
     };
