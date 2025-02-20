@@ -169,10 +169,10 @@
         adj {
             label = "ADJ";
             bindings = <
-       &mmv MOVE_LEFT  &mmv MOVE_RIGHT  &mmv MOVE_DOWN  &mmv MOVE_UP  &none        &bt BT_CLR_ALL  &bt BT_CLR       &none              &none         &none
-       &kp LEFT        &kp RIGHT        &kp DOWN        &kp UP        &none        &bt BT_SEL 4    &bt BT_SEL 0     &bt BT_SEL 1       &bt BT_SEL 2  &bt BT_SEL 3
-&none  &msc SCRL_LEFT  &msc SCRL_RIGHT  &msc SCRL_DOWN  &msc SCRL_UP  &none        &none           &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp C_BRI_UP  &kp C_BRI_DN  &none
-                                        &trans          &mkp LCLK     &mkp RCLK    &trans          &trans           &trans
+       &mmv MOVE_LEFT  &mmv MOVE_RIGHT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mkp RCLK    &bt BT_CLR_ALL  &bt BT_CLR       &none              &none         &none
+       &kp LEFT        &kp RIGHT        &kp DOWN        &kp UP        &mkp LCLK    &bt BT_SEL 4    &bt BT_SEL 0     &bt BT_SEL 1       &bt BT_SEL 2  &bt BT_SEL 3
+&none  &msc SCRL_LEFT  &msc SCRL_RIGHT  &msc SCRL_DOWN  &msc SCRL_UP  &kp F2       &none           &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp C_BRI_UP  &kp C_BRI_DN  &none
+                                        &kp F4          &kp F5        &kp F11      &trans          &trans           &trans
             >;
         };
     };
