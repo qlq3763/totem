@@ -97,14 +97,14 @@
         *
         * Usage: &td_sft_adj
         * Tap: Toggle shift lock
-        * Double Tap: Toggle adj layer
+        * Double Tap: To adj layer
         */
 
         td_sft_adj: td_shiftlock_adj {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kt RSHFT>, <&tog 2>;
+            bindings = <&kt RSHFT>, <&to ADJ>;
         };
 
         /////////////////////////////////////////////////////////////////////////////
