@@ -3,6 +3,7 @@
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 700  // default: 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 70    // default: 10
 
+#include "./keypos.h"
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
@@ -10,8 +11,6 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/pointing.h>
-
-#include "./keypos.h"
 
 #define BASE 0
 #define NUMSYM 1
@@ -150,10 +149,10 @@
         base {
             label = "BASE";
             bindings = <
-       &kp SQT       &kp COMMA            &kp DOT        &kp P         &kp Y      &kp F                  &kp G         &kp C          &kp R                &kp L
-       &hm_l LGUI A  &hm_shift_l LSHFT O  &hm_l LCTRL E  &hm_l LALT U  &kp I      &kp D                  &hm_r RALT H  &hm_r RCTRL T  &hm_shift_r RSHFT N  &hm_r RGUI S
-&none  &kp SEMI      &kp Q                &kp J          &kp K         &kp X      &kp B                  &kp M         &kp W          &kp V                &kp Z         &none
-                                          &kp TAB        &lt 2 SPACE   &kp RET    &hm_shift_r RSHFT TAB  &lt 1 BSPC    &td_sft_adj
+       &kp SQT       &kp COMMA            &kp DOT        &kp P         &kp Y      &kp F                   &kp G         &kp C          &kp R                &kp L
+       &hm_l LGUI A  &hm_shift_l LSHFT O  &hm_l LCTRL E  &hm_l LALT U  &kp I      &kp D                   &hm_r RALT H  &hm_r RCTRL T  &hm_shift_r RSHFT N  &hm_r RGUI S
+&none  &kp SEMI      &kp Q                &kp J          &kp K         &kp X      &kp B                   &kp M         &kp W          &kp V                &kp Z         &none
+                                          &kp ESC        &lt 2 TAB     &kp RET    &hm_shift_r RSHFT BSPC  &lt 1 SPACE   &td_sft_adj
             >;
         };
 
