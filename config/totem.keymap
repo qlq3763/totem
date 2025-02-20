@@ -125,7 +125,7 @@
         * Tap: pipe(|)
         * Shifted Tap: backslash(\)
         */
-        mm_tigr: tilde_grave {
+        mm_pipe: pipe_backslash {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp PIPE>, <&kp BSLH>;
