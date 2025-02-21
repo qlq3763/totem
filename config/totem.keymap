@@ -183,8 +183,8 @@
         navadj {
             label = "NAVADJ";
             bindings = <
-       &none         &none         &none         &bt BT_CLR    &bt BT_CLR_ALL    &mkp RCLK  &mmv MOVE_LEFT  &mmv MOVE_RIGHT  &mmv MOVE_DOWN  &mmv MOVE_UP
-       &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &bt BT_SEL 4      &mkp LCLK  &kp LEFT        &kp RIGHT        &kp DOWN        &kp UP
+       &none         &none         &none         &bt BT_CLR    &bt BT_CLR_ALL    &mkp LCLK  &mmv MOVE_LEFT  &mmv MOVE_RIGHT  &mmv MOVE_DOWN  &mmv MOVE_UP
+       &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &bt BT_SEL 4      &mkp RCLK  &kp LEFT        &kp RIGHT        &kp DOWN        &kp UP
 &none  &kp C_BRI_UP  &kp C_BRI_DN  &kp C_VOL_UP  &kp C_VOL_DN  &none             &none      &msc SCRL_LEFT  &msc SCRL_RIGHT  &msc SCRL_DOWN  &msc SCRL_UP  &none
                                    &trans        &trans        &trans            &trans     &trans          &trans
             >;
