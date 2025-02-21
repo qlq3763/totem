@@ -93,18 +93,18 @@
 
         /////////////////////////////////////////////////////////////////////////////
         /*
-        * Tap dancing shift lock and adj layer
+        * Mod Morphing shift lock and adj layer
         *
-        * Usage: &td_sft_adj
+        * Usage: &mm_sft_adj
         * Tap: Toggle shift lock
-        * Double Tap: To adj layer
+        * CTRL-Tap: To adj layer
         */
 
-        td_sft_adj: td_shiftlock_adj {
-            compatible = "zmk,behavior-tap-dance";
+        mm_sft_adj: mm_shiftlock_adj {
+            compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            tapping-term-ms = <300>;
             bindings = <&kt RSHFT>, <&to ADJ>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
         };
 
         /////////////////////////////////////////////////////////////////////////////
@@ -119,7 +119,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp TILDE>, <&kp GRAVE>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -133,7 +132,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp PIPE>, <&kp BSLH>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
