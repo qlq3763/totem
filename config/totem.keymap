@@ -128,7 +128,7 @@
 
         kpF2 {
             bindings = <&kp F2>;
-            key-positions = <3 4>;
+            key-positions = <0 1>;
             timeout-ms = <50>;
             require-prior-idle-ms = <100>;
             layers = <0 1 2>;
@@ -136,7 +136,7 @@
 
         kpF5 {
             bindings = <&kp F5>;
-            key-positions = <3 2>;
+            key-positions = <2 1>;
             timeout-ms = <50>;
             require-prior-idle-ms = <100>;
             layers = <0 1 2>;
@@ -144,7 +144,7 @@
 
         kpF11 {
             bindings = <&kp F11>;
-            key-positions = <2 1>;
+            key-positions = <2 3>;
             timeout-ms = <50>;
             require-prior-idle-ms = <100>;
             layers = <0 1 2>;
