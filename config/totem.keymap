@@ -101,7 +101,7 @@
             bindings = <&mo>, <&caps_word>;
 
             flavor = "tap-preferred";
-            tapping-term-ms = 200;
+            tapping-term-ms = <200>;
         };
 
         /////////////////////////////////////////////////////////////////////////////
