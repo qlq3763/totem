@@ -151,7 +151,7 @@
             layers = <0 1 2>;
         };
 
-        toBASE {
+        toL0 {
             bindings = <&to 0>;
             key-positions = <6 7>;
             timeout-ms = <50>;
@@ -159,7 +159,7 @@
             layers = <0 1 2>;
         };
 
-        toNAVADJ {
+        toL1 {
             bindings = <&to 1>;
             key-positions = <7 8>;
             timeout-ms = <50>;
@@ -181,8 +181,8 @@
             >;
         };
 
-        navadj {
-            label = "NAVADJ";
+        navigation-config-adjust {
+            label = "navadj";
             bindings = <
        &none         &none         &none         &bt BT_CLR    &bt BT_CLR_ALL    &mkp LCLK  &mmv MOVE_LEFT  &mmv MOVE_RIGHT  &mmv MOVE_DOWN  &mmv MOVE_UP
        &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &bt BT_SEL 4      &mkp RCLK  &kp LEFT        &kp RIGHT        &kp DOWN        &kp UP
@@ -191,8 +191,8 @@
             >;
         };
 
-        numsym {
-            label = "NUMSYM";
+        number-symbol {
+            label = "numsym";
             bindings = <
        &kp N7     &kp N8    &kp N9    &kp N0     &kp N6       &none   &none     &none      &none      &none
        &kp N4     &kp N3    &kp N2    &kp N1     &kp N5       &none   &sk RALT  &sk RCTRL  &sk RSHFT  &sk RGUI
