@@ -89,6 +89,22 @@
         };
 
         /////////////////////////////////////////////////////////////////////////////
+        /*
+        * Usage: &lt_capsword
+        * Tap: caps_word
+        * Hold: momentary layer
+        */
+
+        lt_capsword: lt_caps_word {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&mo>, <&caps_word>;
+
+            flavor = "tap-preferred";
+            tapping-term-ms = 200;
+        };
+
+        /////////////////////////////////////////////////////////////////////////////
         // Swap the default and the shifted
         /*
         * Usage: &mm_tilde
