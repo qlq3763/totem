@@ -195,7 +195,7 @@
             label = "numsym";
             bindings = <
        &kp N7     &kp N8    &kp N9    &kp N0     &kp N6       &none   &none     &none      &none      &none
-       &kp N4     &kp N3    &kp N2    &kp N1     &kp N5       &none   &sk RALT  &sk RCTRL  &sk RSHFT  &sk RGUI
+       &kp N4     &kp N3    &kp N2    &kp N1     &kp N5       &none   &kp RALT  &kp RCTRL  &kp RSHFT  &kp RGUI
 &none  &mm_tilde  &kp FSLH  &mm_pipe  &kp LBKT   &kp RBKT     &none   &none     &none      &none      &none     &none
                             &kp DOT   &kp MINUS  &kp EQUAL    &trans  &trans    &trans
             >;
