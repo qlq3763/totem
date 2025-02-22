@@ -127,52 +127,28 @@
     combos {
         compatible = "zmk,combos";
 
-        kpF2 {
-            bindings = <&kp F2>;
-            key-positions = <0 1>;
-            timeout-ms = <50>;
-            require-prior-idle-ms = <100>;
-            layers = <0 1>;
-        };
-
-        kpF5 {
-            bindings = <&kp F5>;
-            key-positions = <2 1>;
-            timeout-ms = <50>;
-            require-prior-idle-ms = <100>;
-            layers = <0 1>;
-        };
-
-        kpF11 {
-            bindings = <&kp F11>;
-            key-positions = <2 3>;
-            timeout-ms = <50>;
-            require-prior-idle-ms = <100>;
-            layers = <0 1>;
-        };
-
         toL0 {
             bindings = <&to 0>;
             key-positions = <6 7>;
             timeout-ms = <50>;
             require-prior-idle-ms = <100>;
-            layers = <0 1>;
+            layers = <0 1 2>;
         };
 
         toL1 {
-            bindings = <&to 1>;
+            bindings = <&to 4>;
             key-positions = <7 8>;
             timeout-ms = <50>;
             require-prior-idle-ms = <100>;
-            layers = <0 1>;
+            layers = <0 1 2>;
         };
 
-        kpBSPC {
-            bindings = <&kp BSPC>;
-            key-positions = <13 12>;
+        toL2 {
+            bindings = <&to 2>;
+            key-positions = <8 9>;
             timeout-ms = <50>;
             require-prior-idle-ms = <100>;
-            layers = <2>;
+            layers = <0 1 2>;
         };
     };
 
@@ -185,37 +161,37 @@
        &kp SQT       &kp COMMA            &kp DOT        &kp P         &kp Y       &kp F    &kp G         &kp C          &kp R                &kp L
        &hm_l LGUI A  &hm_shift_l LSHFT O  &hm_l LCTRL E  &hm_l LALT U  &kp I       &kp D    &hm_r RALT H  &hm_r RCTRL T  &hm_shift_r RSHFT N  &hm_r RGUI S
 &none  &kp SEMI      &kp Q                &kp J          &kp K         &kp X       &kp B    &kp M         &kp W          &kp V                &kp Z         &none
-                                          &kp ESC        &lt 1 SPACE   &kp BSPC    &kp RET  &lt 2 TAB     &caps_word
+                                          &kp ESC        &lt 4 SPACE   &kp BSPC    &kp RET  &lt 1 TAB     &caps_word
             >;
         };
 
-        navigation {
-            label = "nav";
+        navigationfn {
+            label = "navfn";
             bindings = <
-       &none     &mkp LCLK  &none     &mkp RCLK  &none     &none   &msc SCRL_UP  &msc SCRL_DOWN  &msc SCRL_LEFT  &msc SCRL_RIGHT
-       &kp LEFT  &kp RIGHT  &kp DOWN  &kp UP     &none     &none   &mmv MOVE_UP  &mmv MOVE_DOWN  &mmv MOVE_LEFT  &mmv MOVE_RIGHT
-&none  &none     &none      &none     &none      &none     &none   &none         &none           &none           &none            &none
-                            &trans    &trans     &trans    &trans  &trans        &trans
+       &none     &mkp LCLK  &none     &mkp RCLK  &none     &kp F11  &msc SCRL_UP  &msc SCRL_DOWN  &msc SCRL_LEFT  &msc SCRL_RIGHT
+       &kp LEFT  &kp RIGHT  &kp DOWN  &kp UP     &none     &kp F5   &mmv MOVE_UP  &mmv MOVE_DOWN  &mmv MOVE_LEFT  &mmv MOVE_RIGHT
+&none  &none     &none      &none     &none      &none     &kp F2   &none         &none           &none           &none            &none
+                            &trans    &trans     &trans    &trans   &trans        &trans
             >;
         };
 
         number-symbol {
             label = "numsym";
             bindings = <
-       &kp N7     &kp N8    &kp N9    &kp N0     &kp N6       &none  &none     &none      &none      &none
-       &kp N4     &kp N3    &kp N2    &kp N1     &kp N5       &none  &kp RALT  &kp RCTRL  &kp RSHFT  &kp RGUI
-&none  &mm_tilde  &kp FSLH  &mm_pipe  &kp LBKT   &kp RBKT     &none  &none     &none      &none      &none     &none
-                            &kp DOT   &kp MINUS  &kp EQUAL    &none  &none     &none
+       &kp N7     &kp N8    &kp N9    &kp N0     &kp N6       &none   &none     &none      &none      &none
+       &kp N4     &kp N3    &kp N2    &kp N1     &kp N5       &none   &kp RALT  &kp RCTRL  &kp RSHFT  &kp RGUI
+&none  &mm_tilde  &kp FSLH  &mm_pipe  &kp LBKT   &kp RBKT     &none   &none     &none      &none      &none     &none
+                            &kp DOT   &kp MINUS  &kp EQUAL    &trans  &trans    &trans
             >;
         };
 
         adjustment {
             label = "adj";
             bindings = <
-       &kp C_BRI_DN  &kp C_BRI_UP  &kp C_VOL_DN  &kp C_VOL_UP  &none             &none  &none  &none  &none  &none
-       &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &bt BT_SEL 4      &none  &none  &none  &none  &none
-&none  &none         &none         &bt BT_CLR    &none         &bt BT_CLR_ALL    &none  &none  &none  &none  &none  &none
-                                   &none         &none         &none             &none  &none  &none
+       &kp C_BRI_DN  &kp C_BRI_UP  &kp C_VOL_DN  &kp C_VOL_UP  &none             &none   &none   &none   &none  &none
+       &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &bt BT_SEL 4      &none   &none   &none   &none  &none
+&none  &none         &none         &bt BT_CLR    &none         &bt BT_CLR_ALL    &none   &none   &none   &none  &none  &none
+                                   &trans        &trans        &trans            &trans  &trans  &trans
             >;
         };
     };
