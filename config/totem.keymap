@@ -3,7 +3,17 @@
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 700  // default: 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 70    // default: 10
 
+#define QUICK_TAP 0
+
+#define HM_TAPPING_TERM 300
+#define HM_TAPPING_TERM_FAST 200
+#define HM_PRIOR_IDLE 0
+
+#define COMBO_TERM 100
+#define COMBO_IDLE 0
+
 #include "./keypos.h"
+#include <behaviors/num_word.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
@@ -27,11 +37,6 @@
         // Further optimization using urob's timerless homerow mods method:
         // https://github.com/urob/zmk-config#timeless-homerow-mods
 
-        #define HM_TAPPING_TERM 300
-        #define HM_TAPPING_TERM_FAST 200
-        #define HM_PRIOR_IDLE 0
-        #define HM_QUICK_TAP 0
-
         hm_l: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -39,7 +44,7 @@
 
             flavor = "balanced";
             tapping-term-ms = <HM_TAPPING_TERM>;
-            quick-tap-ms = <HM_QUICK_TAP>;                // repeat on tap-into-hold
+            quick-tap-ms = <QUICK_TAP>;                // repeat on tap-into-hold
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
             hold-trigger-key-positions = <KEYS_R KEYS_T>;
             hold-trigger-on-release;
@@ -52,7 +57,7 @@
 
             flavor = "balanced";
             tapping-term-ms = <HM_TAPPING_TERM>;
-            quick-tap-ms = <HM_QUICK_TAP>;
+            quick-tap-ms = <QUICK_TAP>;
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
             hold-trigger-key-positions = <KEYS_L KEYS_T>;
             hold-trigger-on-release;
@@ -69,7 +74,7 @@
 
             flavor = "balanced";
             tapping-term-ms = <HM_TAPPING_TERM_FAST>;
-            quick-tap-ms = <HM_QUICK_TAP>;
+            quick-tap-ms = <QUICK_TAP>;
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
             hold-trigger-key-positions = <KEYS_R KEYS_T>;
             hold-trigger-on-release;
@@ -82,7 +87,7 @@
 
             flavor = "balanced";
             tapping-term-ms = <HM_TAPPING_TERM_FAST>;
-            quick-tap-ms = <HM_QUICK_TAP>;
+            quick-tap-ms = <QUICK_TAP>;
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
             hold-trigger-key-positions = <KEYS_L KEYS_T>;
             hold-trigger-on-release;
@@ -103,7 +108,21 @@
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
         };
+        /////////////////////////////////////////////////////////////////////////////
+        /*
+        * Usage: &lt_numword
+        * Tap: num_word
+        * Hold: momentary layer
+        */
 
+        lt_numword: lt_num_word {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&mo>, <&num_word>;
+
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+        };
         /////////////////////////////////////////////////////////////////////////////
         // Swap the default and the shifted
         /*
@@ -146,7 +165,7 @@
         toL0 {
             bindings = <&to 0>;
             key-positions = <6 7>;
-            timeout-ms = <50>;
+            timeout-ms = COMBO_TERM;
             require-prior-idle-ms = <100>;
             layers = <0 1 2>;
         };
@@ -154,7 +173,7 @@
         toL1 {
             bindings = <&to 4>;
             key-positions = <7 8>;
-            timeout-ms = <50>;
+            timeout-ms = COMBO_TERM;
             require-prior-idle-ms = <100>;
             layers = <0 1 2>;
         };
@@ -162,7 +181,7 @@
         toL2 {
             bindings = <&to 2>;
             key-positions = <8 9>;
-            timeout-ms = <50>;
+            timeout-ms = COMBO_TERM;
             require-prior-idle-ms = <100>;
             layers = <0 1 2>;
         };
@@ -170,7 +189,7 @@
         kpMINUS {
             bindings = <&kp MINUS>;
             key-positions = <13 12>;
-            timeout-ms = <50>;
+            timeout-ms = COMBO_TERM;
             require-prior-idle-ms = <100>;
             layers = <2>;
         };
@@ -178,7 +197,7 @@
         kpEQUAL {
             bindings = <&kp EQUAL>;
             key-positions = <2 3>;
-            timeout-ms = <50>;
+            timeout-ms = COMBO_TERM;
             require-prior-idle-ms = <100>;
             layers = <2>;
         };
@@ -186,7 +205,7 @@
         kpDOT {
             bindings = <&kp DOT>;
             key-positions = <12 11>;
-            timeout-ms = <50>;
+            timeout-ms = COMBO_TERM;
             require-prior-idle-ms = <100>;
             layers = <2>;
         };
