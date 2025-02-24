@@ -19,6 +19,10 @@
 #include <dt-bindings/zmk/pointing.h>
 
 &caps_word { continue-list = <UNDERSCORE BACKSPACE DELETE MINUS>; };
+&num_word {
+  // continue-list = <BSPC DEL DOT COMMA>;  // do not continue on PLUS, MINUS, STAR, FSLH, EQUAL
+  ignore-modifiers;
+};
 
 / {
     behaviors {
