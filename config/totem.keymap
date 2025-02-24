@@ -174,17 +174,9 @@
             layers = <0 2 1>;
         };
 
-        toL1 {
-            bindings = <&to 2>;
-            key-positions = <7 8>;
-            timeout-ms = <COMBO_TERM>;
-            require-prior-idle-ms = <COMBO_IDLE>;
-            layers = <0 2 1>;
-        };
-
         toL2 {
-            bindings = <&to 1>;
-            key-positions = <8 9>;
+            bindings = <&to 2>;
+            key-positions = <8 7>;
             timeout-ms = <COMBO_TERM>;
             require-prior-idle-ms = <COMBO_IDLE>;
             layers = <0 2 1>;
@@ -239,14 +231,14 @@
         num-word {
             label = "numword";
             bindings = <
-       &kp N7     &kp N8    &kp N9    &kp N0    &kp N6      &none   &none     &none      &none      &none
-       &kp N4     &kp N3    &kp N2    &kp N1    &kp N5      &none   &kp RALT  &kp RCTRL  &kp RSHFT  &kp RGUI
-&none  &mm_tilde  &kp FSLH  &mm_pipe  &kp LBKT  &kp RBKT    &none   &none     &none      &none      &none     &none
-                            &trans    &trans    &trans      &trans  &trans    &trans
+       &kp N7  &kp N8  &kp N9  &kp N0  &kp N6    &none   &none   &none   &none  &none
+       &kp N4  &kp N3  &kp N2  &kp N1  &kp N5    &none   &none   &none   &none  &none
+&none  &none   &none   &none   &none   &none     &none   &none   &none   &none  &none  &none
+                       &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
 
-        navigationfn {
+        navigation-fn {
             label = "navfn";
             bindings = <
        &none     &mkp LCLK  &none     &mkp RCLK  &none     &kp F11  &msc SCRL_UP  &msc SCRL_DOWN  &msc SCRL_LEFT  &msc SCRL_RIGHT
