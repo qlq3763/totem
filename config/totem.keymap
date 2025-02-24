@@ -227,7 +227,7 @@
        &kp SQT       &kp COMMA            &kp DOT        &kp P         &kp Y       &kp F    &kp G            &kp C             &kp R                &kp L
        &hm_l LGUI A  &hm_shift_l LSHFT O  &hm_l LCTRL E  &hm_l LALT U  &kp I       &kp D    &hm_r RALT H     &hm_r RCTRL T     &hm_shift_r RSHFT N  &hm_r RGUI S
 &none  &kp SEMI      &kp Q                &kp J          &kp K         &kp X       &kp B    &kp M            &kp W             &kp V                &kp Z         &none
-                                          &kp ESC        &lt 1 SPACE   &kp BSPC    &kp RET  &lt_numword 2 2  &lt_capsword 3 0
+                                          &kp TAB        &lt 1 SPACE   &kp BSPC    &kp RET  &lt_numword 2 2  &lt_capsword 3 0
             >;
         };
 
@@ -244,10 +244,10 @@
         number-symbol {
             label = "numsym";
             bindings = <
-       &kp N7     &kp N8    &kp N9    &kp N0     &kp N6       &none   &none     &none      &none      &none
-       &kp N4     &kp N3    &kp N2    &kp N1     &kp N5       &none   &kp RALT  &kp RCTRL  &kp RSHFT  &kp RGUI
-&none  &mm_tilde  &kp FSLH  &mm_pipe  &kp LBKT   &kp RBKT     &none   &none     &none      &none      &none     &none
-                            &kp DOT   &kp MINUS  &kp EQUAL    &trans  &trans    &trans
+       &kp N7     &kp N8    &kp N9    &kp N0    &kp N6      &none   &none     &none      &none      &none
+       &kp N4     &kp N3    &kp N2    &kp N1    &kp N5      &none   &kp RALT  &kp RCTRL  &kp RSHFT  &kp RGUI
+&none  &mm_tilde  &kp FSLH  &mm_pipe  &kp LBKT  &kp RBKT    &none   &none     &none      &none      &none     &none
+                            &trans    &trans    &trans      &trans  &trans    &trans
             >;
         };
 
