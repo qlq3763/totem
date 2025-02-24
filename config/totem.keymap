@@ -171,23 +171,23 @@
             key-positions = <6 7>;
             timeout-ms = <COMBO_TERM>;
             require-prior-idle-ms = <COMBO_IDLE>;
-            layers = <0 1 2>;
+            layers = <0 2 1>;
         };
 
         toL1 {
-            bindings = <&to 1>;
+            bindings = <&to 2>;
             key-positions = <7 8>;
             timeout-ms = <COMBO_TERM>;
             require-prior-idle-ms = <COMBO_IDLE>;
-            layers = <0 1 2>;
+            layers = <0 2 1>;
         };
 
         toL2 {
-            bindings = <&to 2>;
+            bindings = <&to 1>;
             key-positions = <8 9>;
             timeout-ms = <COMBO_TERM>;
             require-prior-idle-ms = <COMBO_IDLE>;
-            layers = <0 1 2>;
+            layers = <0 2 1>;
         };
 
         kpESC {
@@ -195,7 +195,7 @@
             key-positions = <0 1>;
             timeout-ms = <COMBO_TERM>;
             require-prior-idle-ms = <COMBO_IDLE>;
-            layers = <0 1 2 3>;
+            layers = <0 2 1 3>;
         };
 
         kpMINUS {
@@ -203,7 +203,7 @@
             key-positions = <13 12>;
             timeout-ms = <COMBO_TERM>;
             require-prior-idle-ms = <COMBO_IDLE>;
-            layers = <2 3>;
+            layers = <1 3>;
         };
 
         kpEQUAL {
@@ -211,7 +211,7 @@
             key-positions = <2 3>;
             timeout-ms = <COMBO_TERM>;
             require-prior-idle-ms = <COMBO_IDLE>;
-            layers = <2 3>;
+            layers = <1 3>;
         };
 
         kpDOT {
@@ -219,7 +219,7 @@
             key-positions = <12 11>;
             timeout-ms = <COMBO_TERM>;
             require-prior-idle-ms = <COMBO_IDLE>;
-            layers = <2 3>;
+            layers = <1 3>;
         };
     };
 
@@ -232,17 +232,7 @@
        &kp SQT       &kp COMMA            &kp DOT        &kp P         &kp Y       &kp F    &kp G            &kp C             &kp R                &kp L
        &hm_l LGUI A  &hm_shift_l LSHFT O  &hm_l LCTRL E  &hm_l LALT U  &kp I       &kp D    &hm_r RALT H     &hm_r RCTRL T     &hm_shift_r RSHFT N  &hm_r RGUI S
 &none  &kp SEMI      &kp Q                &kp J          &kp K         &kp X       &kp B    &kp M            &kp W             &kp V                &kp Z         &none
-                                          &kp TAB        &lt 1 SPACE   &kp BSPC    &kp RET  &lt_numword 2 3  &lt_capsword 4 0
-            >;
-        };
-
-        navigationfn {
-            label = "navfn";
-            bindings = <
-       &none     &mkp LCLK  &none     &mkp RCLK  &none     &kp F11  &msc SCRL_UP  &msc SCRL_DOWN  &msc SCRL_LEFT  &msc SCRL_RIGHT
-       &kp LEFT  &kp RIGHT  &kp DOWN  &kp UP     &none     &kp F5   &mmv MOVE_UP  &mmv MOVE_DOWN  &mmv MOVE_LEFT  &mmv MOVE_RIGHT
-&none  &none     &none      &none     &none      &none     &kp F2   &none         &none           &none           &none            &none
-                            &trans    &trans     &trans    &trans   &trans        &trans
+                                          &kp TAB        &lt 2 SPACE   &kp BSPC    &kp RET  &lt_numword 1 3  &lt_capsword 4 0
             >;
         };
 
@@ -253,6 +243,16 @@
        &kp N4     &kp N3    &kp N2    &kp N1    &kp N5      &none   &kp RALT  &kp RCTRL  &kp RSHFT  &kp RGUI
 &none  &mm_tilde  &kp FSLH  &mm_pipe  &kp LBKT  &kp RBKT    &none   &none     &none      &none      &none     &none
                             &trans    &trans    &trans      &trans  &trans    &trans
+            >;
+        };
+
+        navigationfn {
+            label = "navfn";
+            bindings = <
+       &none     &mkp LCLK  &none     &mkp RCLK  &none     &kp F11  &msc SCRL_UP  &msc SCRL_DOWN  &msc SCRL_LEFT  &msc SCRL_RIGHT
+       &kp LEFT  &kp RIGHT  &kp DOWN  &kp UP     &none     &kp F5   &mmv MOVE_UP  &mmv MOVE_DOWN  &mmv MOVE_LEFT  &mmv MOVE_RIGHT
+&none  &none     &none      &none     &none      &none     &kp F2   &none         &none           &none           &none            &none
+                            &trans    &trans     &trans    &trans   &trans        &trans
             >;
         };
 
