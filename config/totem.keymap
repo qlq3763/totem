@@ -192,7 +192,7 @@
 
         kpESC {
             bindings = <&kp ESC>;
-            key-positions = <0 1>;
+            key-positions = <1 2>;
             timeout-ms = <COMBO_TERM>;
             require-prior-idle-ms = <COMBO_IDLE>;
             layers = <0 2 1 3>;
