@@ -178,7 +178,7 @@
 
         kpEQUAL {
             bindings = <&kp EQUAL>;
-            key-positions = <2 3>;
+            key-positions = <11 12>;
             timeout-ms = <COMBO_TERM>;
             require-prior-idle-ms = <COMBO_IDLE>;
             layers = <2>;
@@ -186,7 +186,7 @@
 
         kpDOT {
             bindings = <&kp DOT>;
-            key-positions = <12 11>;
+            key-positions = <3 2>;
             timeout-ms = <COMBO_TERM>;
             require-prior-idle-ms = <COMBO_IDLE>;
             layers = <2>;
@@ -219,10 +219,10 @@
         number-symbol {
             label = "numsym";
             bindings = <
-       &kp N7     &kp N8    &kp N9    &kp N0     &kp N6       &none   &none     &none      &none      &none
-       &kp N4     &kp N3    &kp N2    &kp N1     &kp N5       &none   &kp RALT  &kp RCTRL  &kp RSHFT  &kp RGUI
-&none  &mm_tilde  &kp FSLH  &mm_pipe  &kp LBKT   &kp RBKT     &none   &none     &none      &none      &none     &none
-                            &kp DOT   &kp MINUS  &kp EQUAL    &trans  &trans    &trans
+       &kp N7     &kp N8    &kp N9    &kp N0    &kp N6      &none   &none     &none      &none      &none
+       &kp N4     &kp N3    &kp N2    &kp N1    &kp N5      &none   &kp RALT  &kp RCTRL  &kp RSHFT  &kp RGUI
+&none  &mm_tilde  &kp FSLH  &mm_pipe  &kp LBKT  &kp RBKT    &none   &none     &none      &none      &none     &none
+                            &trans    &trans    &trans      &trans  &trans    &trans
             >;
         };
 
