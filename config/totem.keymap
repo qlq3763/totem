@@ -206,7 +206,7 @@
             >;
         };
 
-        navigationfn {
+        navigation-fn {
             label = "navfn";
             bindings = <
        &none     &mkp LCLK  &none     &mkp RCLK  &none     &kp F11  &msc SCRL_UP  &msc SCRL_DOWN  &msc SCRL_LEFT  &msc SCRL_RIGHT
