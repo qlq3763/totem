@@ -220,6 +220,50 @@
         };
     };
 
+    macros {
+        undo: undo {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp RCTRL>,
+                <&macro_tap>,
+                <&kp FSLH>,
+                <&macro_release>,
+                <&kp RCTRL>;
+
+            label = "UNDO";
+        };
+
+        undo_redo: undo_redo {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp RCTRL>,
+                <&macro_tap>,
+                <&kp QMARK>,
+                <&macro_release>,
+                <&kp RCTRL>;
+
+            label = "UNDO_REDO";
+        };
+
+        close: close {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp RCTRL>,
+                <&macro_tap>,
+                <&kp QMARK>,
+                <&macro_release>,
+                <&kp RCTRL>;
+
+            label = "CLOSE";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
