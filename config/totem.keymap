@@ -4,7 +4,7 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 70    // default: 10
 #define QUICK_TAP 0
 #define HM_TAPPING_TERM 300
-#define HM_TAPPING_TERM_FAST 200
+#define HM_TAPPING_TERM_FAST 300
 #define HM_PRIOR_IDLE 0
 #define COMBO_TERM 200
 #define COMBO_IDLE 0
@@ -91,6 +91,24 @@
 
         /////////////////////////////////////////////////////////////////////////////
         /*
+        * Usage: &lt_balanced
+        * Tap: key press
+        * Hold: momentary layer
+        */
+
+        lt_balanced: lt_balanced {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&mo>, <&kp>;
+            flavor = "balanced";
+            tapping-term-ms = <HM_TAPPING_TERM>;
+            quick-tap-ms = <QUICK_TAP>;
+            require-prior-idle-ms = <HM_PRIOR_IDLE>;
+            // hold-trigger-key-positions = <KEYS_L KEYS_T>;
+            hold-trigger-on-release;
+        };
+
+        /*
         * Usage: &lt_capsword
         * Tap: caps_word
         * Hold: momentary layer
@@ -100,9 +118,12 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             bindings = <&mo>, <&caps_word>;
-
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            flavor = "balanced";
+            tapping-term-ms = <HM_TAPPING_TERM>;
+            quick-tap-ms = <QUICK_TAP>;
+            require-prior-idle-ms = <HM_PRIOR_IDLE>;
+            // hold-trigger-key-positions = <KEYS_L KEYS_T>;
+            hold-trigger-on-release;
         };
 
         /////////////////////////////////////////////////////////////////////////////
