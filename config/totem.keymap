@@ -100,11 +100,14 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             bindings = <&mo>, <&kp>;
+
             flavor = "balanced";
             tapping-term-ms = <HM_TAPPING_TERM>;
             quick-tap-ms = <QUICK_TAP>;
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
+
             // hold-trigger-key-positions = <KEYS_L KEYS_T>;
+
             hold-trigger-on-release;
         };
 
@@ -118,11 +121,14 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             bindings = <&mo>, <&caps_word>;
+
             flavor = "balanced";
             tapping-term-ms = <HM_TAPPING_TERM>;
             quick-tap-ms = <QUICK_TAP>;
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
+
             // hold-trigger-key-positions = <KEYS_L KEYS_T>;
+
             hold-trigger-on-release;
         };
 
@@ -220,10 +226,10 @@
         base {
             label = "BASE";
             bindings = <
-       &kp SQT       &kp COMMA            &kp DOT        &kp P         &kp Y       &kp F    &kp G         &kp C             &kp R                &kp L
-       &hm_l LGUI A  &hm_shift_l LSHFT O  &hm_l LCTRL E  &hm_l LALT U  &kp I       &kp D    &hm_r RALT H  &hm_r RCTRL T     &hm_shift_r RSHFT N  &hm_r RGUI S
-&none  &kp SEMI      &kp Q                &kp J          &kp K         &kp X       &kp B    &kp M         &kp W             &kp V                &kp Z         &none
-                                          &kp ESC        &lt 1 SPACE   &kp BSPC    &kp RET  &lt 2 TAB     &lt_capsword 3 0
+       &kp SQT       &kp COMMA            &kp DOT        &kp P                 &kp Y       &kp F    &kp G               &kp C             &kp R                &kp L
+       &hm_l LGUI A  &hm_shift_l LSHFT O  &hm_l LCTRL E  &hm_l LALT U          &kp I       &kp D    &hm_r RALT H        &hm_r RCTRL T     &hm_shift_r RSHFT N  &hm_r RGUI S
+&none  &kp SEMI      &kp Q                &kp J          &kp K                 &kp X       &kp B    &kp M               &kp W             &kp V                &kp Z         &none
+                                          &kp ESC        &lt_balanced 1 SPACE  &kp BSPC    &kp RET  &lt_balanced 2 TAB  &lt_capsword 3 0
             >;
         };
 
