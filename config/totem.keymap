@@ -254,11 +254,11 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp RCTRL>,
+                <&kp RALT>,
                 <&macro_tap>,
-                <&kp QMARK>,
+                <&kp F4>,
                 <&macro_release>,
-                <&kp RCTRL>;
+                <&kp RALT>;
 
             label = "CLOSE";
         };
@@ -280,10 +280,10 @@
         navigation-misc {
             label = "navmisc";
             bindings = <
-       &none     &mkp LCLK  &none     &mkp RCLK  &kp F2    &kp F11  &msc SCRL_UP  &msc SCRL_DOWN  &msc SCRL_LEFT  &msc SCRL_RIGHT
-       &kp LEFT  &kp RIGHT  &kp DOWN  &kp UP     &kp F5    &kp F5   &mmv MOVE_UP  &mmv MOVE_DOWN  &mmv MOVE_LEFT  &mmv MOVE_RIGHT
-&none  &none     &none      &none     &kp F11    &none     &kp F2   &none         &none           &none           &none            &none
-                            &trans    &trans     &trans    &trans   &trans        &trans
+       &none     &mkp LCLK  &none     &mkp RCLK  &kp F2    &undo_redo  &msc SCRL_UP  &msc SCRL_DOWN  &msc SCRL_LEFT  &msc SCRL_RIGHT
+       &kp LEFT  &kp RIGHT  &kp DOWN  &kp UP     &kp F5    &undo       &mmv MOVE_UP  &mmv MOVE_DOWN  &mmv MOVE_LEFT  &mmv MOVE_RIGHT
+&none  &none     &none      &none     &kp F11    &none     &close      &none         &none           &none           &none            &none
+                            &trans    &trans     &trans    &trans      &trans        &trans
             >;
         };
 
