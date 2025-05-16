@@ -2,10 +2,10 @@
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 700  // default: 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 70    // default: 10
-#define QUICK_TAP 0
+#define QUICK_TAP 175
 #define HM_TAPPING_TERM 300
-#define HM_TAPPING_TERM_FAST 300
-#define HM_PRIOR_IDLE 0
+#define HM_TAPPING_TERM_FAST 200
+#define HM_PRIOR_IDLE 150
 #define COMBO_TERM 200
 #define COMBO_IDLE 0
 
